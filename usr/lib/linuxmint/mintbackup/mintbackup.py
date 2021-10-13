@@ -302,7 +302,8 @@ class MintBackup:
     def conneect_callback(self, widget):
         id = self.builder.get_object("id1").get_text()
         password = self.builder.get_object("password1").get_text()
-        check = os.system("echo \"{}\n \n{}\" > {}/.cred | gio mount davs://drive.hamonikr.org/remote.php/webdav < {}/.cred".format(id,password,self.home_directory,self.home_directory))
+        os.system("echo \"{}\n \n{}\" > {}/.cred".format(id,password,self.home_directory))
+        check = os.system("gio mount davs://drive.hamonikr.org/remote.php/webdav < {}/.cred".format(self.home_directory))
         if check == 0:
             BEFORE_DIR = os.popen("echo /run/user/*").read().strip()
             BACKUP_DIR = BEFORE_DIR + "/gvfs/dav:host=drive.hamonikr.org,ssl=true,prefix=%2Fremote.php%2Fwebdav"
@@ -314,7 +315,8 @@ class MintBackup:
     def conneect_callback1(self, widget):
         id = self.builder.get_object("id2").get_text()
         password = self.builder.get_object("password2").get_text()
-        check = os.system("echo \"{}\n \n{}\" > {}/.cred | gio mount davs://drive.hamonikr.org/remote.php/webdav < {}/.cred".format(id,password,self.home_directory,self.home_directory))
+        os.system("echo \"{}\n \n{}\" > {}/.cred".format(id,password,self.home_directory))
+        check = os.system("gio mount davs://drive.hamonikr.org/remote.php/webdav < {}/.cred".format(self.home_directory))
         if check == 0:
             BEFORE_DIR = os.popen("echo /run/user/*").read().strip()
             BACKUP_DIR = BEFORE_DIR + "/gvfs/dav:host=drive.hamonikr.org,ssl=true,prefix=%2Fremote.php%2Fwebdav"
