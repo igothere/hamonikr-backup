@@ -69,7 +69,6 @@ class MintBackup:
         self.notebook = self.builder.get_object("notebook1")
         self.progressbar = self.builder.get_object("progressbar1")
         self.restore_progressbar = self.builder.get_object("progressbar2")
-        self.alert = self.builder.get_object('dialog1')
         
         self.notebook.set_current_page(TAB_START)
         # inidicates whether an operation is taking place.
@@ -167,6 +166,8 @@ class MintBackup:
         self.builder.get_object("filechooserbutton_restore_dest_cloud").connect("clicked", self.on_checkb2_toggled)
         self.builder.get_object("button_connect").connect("clicked", self.conneect_callback)
         self.builder.get_object("button_connect1").connect("clicked", self.conneect_callback1)
+        self.builder.get_object("password1").connect("activate",self.conneect_callback)
+        self.builder.get_object("password2").connect("activate",self.conneect_callback1)
         # nav buttons
         self.builder.get_object("button_back").connect("clicked", self.back_callback)
         self.builder.get_object("button_forward").connect("clicked", self.forward_callback)
@@ -395,7 +396,7 @@ class MintBackup:
             # sanity check the files (file --mimetype)
             self.restore_source = self.builder.get_object("filechooserbutton_restore_source").get_filename()
             self.overwrite_existing_files = self.builder.get_object("radiobutton_restore_all").get_active()
-            if not self.restore_source or self.restore_source == "":
+            if not self.restore_source or self.restore_source == "":               
                 self.show_message(_("Please choose a backup file."))
                 return
             try:
