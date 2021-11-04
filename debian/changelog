@@ -1,4 +1,4 @@
-hamonikrbackup (1.0.0) stable; urgency=medium
+hamonikr-backup (1.0.0) stable; urgency=medium
 
   * Add pkg name as hamonikrbackup
     - remove conflict pkg name with mintbackup
