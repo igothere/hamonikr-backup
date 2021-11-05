@@ -7,7 +7,7 @@
       <pattern>*.tar</pattern>
       <pattern>*.tar.gz</pattern>
       <pattern>*.tar.bz2</pattern>
-      <pattern>*.tar.xz</pattern>
+      <pattern>*.tar.xz</pattern> 
     </patterns>
   </object>
   <object class="GtkWindow" id="main_window">
