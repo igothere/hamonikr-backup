@@ -1,4 +1,4 @@
-# Hamonize-backup
+# hamonikr-backup
 
 개인 자료 및 소프트웨어를 백업/복구 할 수 있는 프로그램 입니다.
 
